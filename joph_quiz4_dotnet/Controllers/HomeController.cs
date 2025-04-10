@@ -16,7 +16,7 @@ namespace joph_quiz4_dotnet.Controllers
         public IActionResult Index()
         {
             ViewBag.DatabaseMessage =
-            "Database access has already been done on April 1, 2025 by Joph";
+            "Database access has Fixed on April 10, 2025 by Jophiel";
             return View();
         }
 
