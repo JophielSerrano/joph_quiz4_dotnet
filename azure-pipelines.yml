@@ -1,7 +1,7 @@
 trigger:
   - main
 
-pool: 
+pool:
   name: 'Default'
 
 variables:
@@ -27,6 +27,13 @@ steps:
   inputs:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
+
+- task: NuGetCommand@2
+  inputs:
+    command: 'push'
+    packagesToPush: '$(Build.ArtifactStagingDirectory)/**/*.nupkg'
+    nuGetFeedType: 'internal'
+    publishVstsFeed: 'Quiz4Feed'
 
 - task: PublishBuildArtifacts@1
   inputs:
